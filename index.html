@@ -6,8 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
 </head>
+<style type="text/css">
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    th {
+        text-align: left;
+    }
+</style>
 <body>
-    <h1>Curso de JavaScript</h1>
+    <header>
+        <h1>Promedio de Notas de Parciales</h1>
+    </header>
+    <main>
+        <select id="select1">
+            <option value="1" selected>Matemática</option>
+            <option value="2">Lengua</option>
+            <option value="3">Historia</option>
+            <option value="4">Geografía</option>
+            <option value="5">Economía</option>
+        </select>
+
+        <p>Alumno: <input type="text" id="nombre"></p>
+        <p>Nota 1: <input type="text" id="n1"></p>
+        <p>Nota 2: <input type="text" id="n2"></p>
+        <p>Nota 3: <input type="text" id="n3"></p>
+        <p><input type="button" value="Calcular" onclick="calcularPromedio()"></p>
+    </main>
+
+    <footer>
+        <table style="width: 100%">
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Asignatura
+                </th>
+                <th>
+                    Promedio Total
+                </th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </footer>
 
     <script src="./js/main.js"></script>
 </body>
