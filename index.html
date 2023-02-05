@@ -6,68 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
 </head>
-<style type="text/css">
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        padding: 15px;
-    }
-
-    th {
-        text-align: left;
-    }
-</style>
 <body>
     <header>
-        <h1>Promedio de Notas de Parciales</h1>
+        <h1>Sistema de Promedios de Parciales</h1>
     </header>
     <main>
-        <select id="select1">
-            <option value="1" selected>Matemática</option>
-            <option value="2">Lengua</option>
-            <option value="3">Historia</option>
-            <option value="4">Geografía</option>
-            <option value="5">Economía</option>
-        </select>
+        <form id="agregarDato">
+            <label for="nombre">Nombre y Apellido: </label>
+            <input id="nombreDato" type="text">
+            <br><br>
 
-        <p>Alumno: <input type="text" id="nombre"></p>
-        <p>Nota 1: <input type="text" id="n1"></p>
-        <p>Nota 2: <input type="text" id="n2"></p>
-        <p>Nota 3: <input type="text" id="n3"></p>
-        <p><input type="button" value="Calcular" onclick="calcularPromedio()"></p>
+            <label for="calificacion1">Nota 1: </label>
+            <input id="calificacion1" type="number">
+            <br><br>
+
+            <label for="calificacion2">Nota 2: </label>
+            <input id="calificacion2" type="number">
+            <br><br>
+
+            <label for="calificacion3">Nota 3: </label>
+            <input id="calificacion3" type="number">
+            <br><br>
+
+            <label for="select1">Asignatura: </label>
+            <select name="select1" id="select1">
+                <option value="matemática">Matemática</option>
+                <option value="lengua">Lengua</option>
+                <option value="historia">Historia</option>
+                <option value="geografia">Geografía</option>
+                <option value="economia">Economía</option>
+            </select>
+            <button type="submit">Calcular</button>
+        </form>
+
+        <h2>Ver Tablero de Promedios:</h2>
     </main>
 
     <footer>
-        <table style="width: 100%">
-            <tr>
-                <th>
-                    Nombre
-                </th>
-                <th>
-                    Asignatura
-                </th>
-                <th>
-                    Promedio Total
-                </th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Asignatura</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+            </tbody>
         </table>
     </footer>
 
