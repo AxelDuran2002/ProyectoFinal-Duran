@@ -38,7 +38,7 @@ const datos = [];
 
 const tabla = document.getElementById("tabla");
 const inputNombreDato = document.getElementById("nombreDato");
-const inputAsignaturaDato = document.getElementById("asignaturaDato");
+const inputAsignaturaDato = document.getElementById("select1");
 const inputPromedioDato = document.getElementById("promedioDato");
 
 const formAgregarDato = document.getElementById("agregarDato");
@@ -54,7 +54,7 @@ formAgregarDato.addEventListener("submit", (event) => {
     inputAsignaturaDato.value = "";
     inputPromedioDato.value = "";
 
-    datos.push(new Datos(nombre, asignatura, promedio));
+    datos.push(new Datos(nombre, nota1, nota2, nota3, asignatura, promedio));
 
     renderizarTabla();
 })
