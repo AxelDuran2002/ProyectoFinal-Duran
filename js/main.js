@@ -1,19 +1,15 @@
-let nota1;
-let nota2;
-let nota3;
-
-function calcularNota() {
-    resultado = (nota1 + nota2 + nota3)/3;
-}
-
 class Datos {
     constructor(nombre, nota1, nota2, nota3, asignatura, promedio) {
         this.nombre = nombre;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
-        this.nota3 = nota3;
+        this.nota1 = parseInt(nota1);
+        this.nota2 = parseInt(nota2);
+        this.nota3 = parseInt(nota3);
+        this.promedio = parseInt(promedio);
         this.asignatura = asignatura;
-        this.promedio = promedio;
+    }
+    calcularNota() {
+        this.promedio = (this.nota1 + this.nota2 + this.nota3) / 3;
+        return this.promedio
     }
 }
 
@@ -47,7 +43,10 @@ const datos = [];
 const tabla = document.getElementById("tabla");
 const inputNombreDato = document.getElementById("nombreDato");
 const inputAsignaturaDato = document.getElementById("select1");
-const inputPromedioDato = document.getElementById("promedioDato");
+
+const calif1 = document.getElementById("calificacion1")
+const calif2 = document.getElementById("calificacion2")
+const calif3 = document.getElementById("calificacion3")
 
 const formAgregarDato = document.getElementById("agregarDato");
 formAgregarDato.addEventListener("submit", (event) => {
@@ -56,67 +55,20 @@ formAgregarDato.addEventListener("submit", (event) => {
 
     const nombre = inputNombreDato.value;
     const asignatura = inputAsignaturaDato.value;
-    const promedio = inputPromedioDato.value;
+
+    const nota1 = calif1.value
+    const nota2 = calif2.value
+    const nota3 = calif3.value
 
     inputNombreDato.value = "";
     inputAsignaturaDato.value = "";
-    inputPromedioDato.value = "";
 
-    datos.push(new Datos(nombre, nota1, nota2, nota3, asignatura, promedio));
+    const alumno = new Datos(nombre, nota1, nota2, nota3, asignatura)
+    alumno.calcularNota()
+
+    datos.push(alumno);
 
     renderizarTabla();
+
+    localStorage.setItem( "nombre", JSON.stringify( alumno )   );
 })
-
-
-/*let alumno;
-let nota1;
-let nota2;
-let nota3;
-let promedio;
-
-do{
-    alumno = prompt("Ingrese nombre")
-}while(!isNaN(alumno))
-
-do{
-    nota1 = parseInt(prompt("Ingrese la nota 1"))
-}while(isNaN(nota1)||!(nota1 > 0 && nota1 < 11))
-
-do{
-    nota2 = parseInt(prompt("Ingrese la nota 2"))
-}while(isNaN(nota2)||!(nota2 > 0 && nota2 < 11))
-
-do{
-    nota3 = parseInt(prompt("Ingrese la nota 3"))
-}while(isNaN(nota3)||!(nota3 > 0 && nota3 < 11))
-
-
-function calcularNota (alumno, nota1, nota2, nota3){
-    let sumaNota = nota1 + nota2 + nota3
-    promedio = sumaNota/3
-
-    if (promedio >= 7){
-        alert("El estudiante " + alumno + " ha promocionado con " + promedio);
-    }else if (promedio >= 4){
-        alert("El estudiante " + alumno + " deberá rendir final por sacar " + promedio);
-    }else{
-        alert("El estudiante " + alumno + " va a tener que recursar");
-    }
-}
-
-const estudiante = []
-
-estudiante.push({
-    nombre: alumno,
-    nota1: nota1,
-    nota2: nota2,
-    nota3: nota3,
-    promedio: (nota1 + nota2 + nota3) / 3,
-});
-
-console.log(estudiante);
-
-calcularNota(alumno, nota1, nota2, nota3);
-
-let aprobados = estudiante.filter(alumno => alumno.promedio >= 7);
-console.log(aprobados);*/
