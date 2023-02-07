@@ -1,3 +1,11 @@
+let nota1;
+let nota2;
+let nota3;
+
+function calcularNota() {
+    resultado = (nota1 + nota2 + nota3)/3;
+}
+
 class Datos {
     constructor(nombre, nota1, nota2, nota3, asignatura, promedio) {
         this.nombre = nombre;
