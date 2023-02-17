@@ -71,4 +71,11 @@ formAgregarDato.addEventListener("submit", (event) => {
     renderizarTabla();
 
     localStorage.setItem( "nombre", JSON.stringify( alumno )   );
+
+    swal({
+        title: "Genial",
+        text: "Se ha realizado su promedio correctamente",
+        icon: "success",
+        button: "Volver"
+    })
 })
