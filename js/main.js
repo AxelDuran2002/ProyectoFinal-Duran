@@ -61,6 +61,9 @@ formAgregarDato.addEventListener("submit", (event) => {
     const nota3 = calif3.value
 
     inputNombreDato.value = "";
+    calif1.value = "";
+    calif2.value = "";
+    calif3.value = "";
     inputAsignaturaDato.value = "";
 
     const alumno = new Datos(nombre, nota1, nota2, nota3, asignatura)
@@ -78,4 +81,12 @@ formAgregarDato.addEventListener("submit", (event) => {
         icon: "success",
         button: "Volver"
     })
+})
+
+fetch("./json/datos.json")
+.then( (response) => {
+    return response.json();
+})
+.then( (responseDatos) => {
+    renderizarTabla(responseDatos);
 })
